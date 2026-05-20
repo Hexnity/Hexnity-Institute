@@ -54,7 +54,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 ENV NODE_ENV=production
 WORKDIR /app
 
-# 1. Setup Caddy/FrankenPHP system directories (Essential fix for the crash)
+# 1. Setup Caddy/FrankenPHP system directories (Fixes the permission denied crash)
 RUN mkdir -p /data/caddy /config/caddy \
     && chown -R www-data:www-data /data /config
 
@@ -62,13 +62,28 @@ RUN mkdir -p /data/caddy /config/caddy \
 COPY composer.json composer.lock ./
 RUN composer install --no-interaction --no-dev --optimize-autoloader --ignore-platform-reqs
 
-# 3. Copy Assets and Code
-COPY --from=builder /app/web/dist ./web/dist
+# 3. Copy application code and assets
 COPY . .
+COPY --from=builder /app/web/dist ./web/dist
 
-# 4. Final Permissions for Craft CMS folders
+# 4. RUTHLESS PATH CLEANUP
+# Remove the 'public' folder so it cannot hijack requests meant for 'web'
+RUN rm -rf /app/public
+
+# 5. HARDCODE WEB ROOT
+# This forces FrankenPHP to serve from /app/web and prevents the phpinfo() issue
+RUN echo ':80 { \n\
+    root * /app/web \n\
+    php_server \n\
+    file_server \n\
+}' > /etc/frankenphp/Caddyfile
+
+# 6. Final Permissions for Craft CMS
 RUN mkdir -p storage cpresources web/assets \
-    && chown -R www-data:www-data /app storage cpresources web/assets
+    && chown -R www-data:www-data /app storage cpresources web/assets /etc/frankenphp/Caddyfile
 
 # Use FrankenPHP's user for security
 USER www-data
+
+# Ensure the server knows to listen on port 80
+ENV SERVER_NAME=:80
