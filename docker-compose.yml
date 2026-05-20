@@ -1,0 +1,50 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - CRAFT_ENVIRONMENT=production
+      - CRAFT_DB_DRIVER=pgsql
+      - CRAFT_DB_SERVER=db
+      - CRAFT_DB_PORT=5432
+      - CRAFT_DB_DATABASE=${CRAFT_DB_DATABASE}
+      - CRAFT_DB_USER=${CRAFT_DB_USER}
+      - CRAFT_DB_PASSWORD=${CRAFT_DB_PASSWORD}
+      - CRAFT_DB_SCHEMA=public
+      - CRAFT_SECURITY_KEY=${CRAFT_SECURITY_KEY}
+      - CRAFT_APP_ID=${CRAFT_APP_ID}
+      # FrankenPHP Specifics
+      - SERVER_NAME=:80
+      - CADDY_GLOBAL_OPTIONS=local_certs
+    volumes:
+      - craft-storage:/app/storage
+      - craft-cpresources:/app/web/cpresources
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:17-alpine
+    environment:
+      - POSTGRES_DB=${CRAFT_DB_DATABASE}
+      - POSTGRES_USER=${CRAFT_DB_USER}
+      - POSTGRES_PASSWORD=${CRAFT_DB_PASSWORD}
+    volumes:
+      - craft-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${CRAFT_DB_USER} -d ${CRAFT_DB_DATABASE}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  craft-storage:
+  craft-cpresources:
+  craft-db-data:

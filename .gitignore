@@ -5,3 +5,7 @@
 /.env.example.dev
 /.env.example.production
 /.env.example.staging
+/web/cpresources/*
+/storage/*
+!/storage/rebrand/
+node_modules/
