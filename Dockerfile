@@ -43,7 +43,7 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     mbstring \
     xml
 
-# Install & Enable Imagick (Fixing potential PECL failures in Alpine)
+# Install & Enable Imagick
 RUN pecl install imagick \
     && docker-php-ext-enable imagick
 
@@ -54,21 +54,21 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 ENV NODE_ENV=production
 WORKDIR /app
 
-# Copy Composer files first
-COPY composer.json composer.lock ./
+# 1. Setup Caddy/FrankenPHP system directories (Essential fix for the crash)
+RUN mkdir -p /data/caddy /config/caddy \
+    && chown -R www-data:www-data /data /config
 
-# CRITICAL FIX: Added --ignore-platform-reqs to solve the exit code: 2 error
+# 2. Handle Composer
+COPY composer.json composer.lock ./
 RUN composer install --no-interaction --no-dev --optimize-autoloader --ignore-platform-reqs
 
-# Copy compiled assets from Stage 1
+# 3. Copy Assets and Code
 COPY --from=builder /app/web/dist ./web/dist
-
-# Copy application code
 COPY . .
 
-# Set permissions for Craft CMS
+# 4. Final Permissions for Craft CMS folders
 RUN mkdir -p storage cpresources web/assets \
-    && chown -R www-data:www-data storage cpresources web/assets
+    && chown -R www-data:www-data /app storage cpresources web/assets
 
 # Use FrankenPHP's user for security
 USER www-data
