@@ -1,72 +1,59 @@
 {% extends "index" %}
 
 {% block content %}
-  <!-- ═══════════════════════════════════════════
-       HERO
-  ═══════════════════════════════════════════ -->
   <section class="max-w-6xl mx-auto px-5 pt-10 pb-16">
     <div class="relative rounded-2xl overflow-hidden bg-gray-800 min-h-105 md:min-h-120 flex items-end">
       <img src="https://picsum.photos/seed/building1/1200/600" alt="Commercial building"
            class="absolute inset-0 w-full h-full object-cover opacity-60" />
       <div class="relative z-10 p-8 md:p-14 max-w-xl">
         <h1 class="hero-text text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
-          Real Estate<br/>for Business
+          Build Your Future<br/>with Confidence
         </h1>
         <p class="text-gray-200 text-sm md:text-base mb-7 leading-relaxed">
-          Rent, sale, and selection of properties —<br/>from offices to warehouses.
+          Career-focused education programs for students and professionals,<br/>from foundation to advanced levels.
         </p>
         <a href="#contact" class="inline-block bg-white text-gray-900 font-semibold text-sm px-6 py-3 rounded-lg hover:bg-gray-100 transition">
-          Start Cooperation
+          Start Learning
         </a>
       </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════════
-       ABOUT + STATS
-  ═══════════════════════════════════════════ -->
   <section id="about" class="max-w-6xl mx-auto px-5 pb-16">
     <div class="flex flex-col md:flex-row gap-10 items-start">
-
-      <!-- Left: About text -->
       <div class="md:w-1/3">
         <h2 class="text-2xl font-bold mb-3">About Us</h2>
         <p class="text-gray-500 text-sm leading-relaxed">
-          We are an expert commercial real estate agency that helps businesses find the right properties for rent or purchase. We provide a full range of services — from finding suitable options to complete legal support of transactions.
+          Hexnity Institute empowers learners with practical, industry-aligned education. We support students through structured teaching, mentorship, and skill development.
         </p>
       </div>
 
-      <!-- Right: Stats -->
       <div class="md:w-2/3 grid grid-cols-2 sm:grid-cols-4 gap-0 border border-gray-100 rounded-2xl overflow-hidden">
         <div class="p-6 flex flex-col gap-1">
           <span class="text-3xl font-extrabold text-dark">10+</span>
-          <span class="text-xs text-gray-400 leading-snug">Years on the market</span>
+          <span class="text-xs text-gray-400 leading-snug">Years in education</span>
         </div>
         <div class="p-6 flex flex-col gap-1 border-l border-gray-100">
           <span class="text-3xl font-extrabold text-dark">1000+</span>
-          <span class="text-xs text-gray-400 leading-snug">Completed transactions</span>
+          <span class="text-xs text-gray-400 leading-snug">Graduated students</span>
         </div>
         <div class="p-6 flex flex-col gap-1 border-t border-gray-100 sm:border-t-0 sm:border-l">
           <span class="text-3xl font-extrabold text-dark">4000+</span>
-          <span class="text-xs text-gray-400 leading-snug">Objects in the base</span>
+          <span class="text-xs text-gray-400 leading-snug">Learning hours delivered</span>
         </div>
         <div class="p-6 flex flex-col gap-1 border-t border-l border-gray-100 sm:border-t-0">
           <span class="text-3xl font-extrabold text-dark">95%</span>
-          <span class="text-xs text-gray-400 leading-snug">Satisfied clients</span>
+          <span class="text-xs text-gray-400 leading-snug">Student satisfaction</span>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════════
-       PARTNER LOGOS
-  ═══════════════════════════════════════════ -->
   <section class="border-y border-gray-100 py-8 mb-16">
     <div class="max-w-6xl mx-auto px-5">
       <div class="logo-row flex flex-wrap items-center justify-center gap-8 md:gap-14">
-        <!-- SVG placeholder logos -->
         <svg width="110" height="30" viewBox="0 0 110 30" fill="none"><rect x="0" y="8" width="22" height="14" rx="3" fill="#94a3b8"/><text x="28" y="21" font-size="13" font-family="Manrope,sans-serif" font-weight="700" fill="#64748b">LogoIpsum</text></svg>
         <svg width="110" height="30" viewBox="0 0 110 30" fill="none"><circle cx="11" cy="15" r="10" fill="#94a3b8"/><text x="27" y="21" font-size="13" font-family="Manrope,sans-serif" font-weight="700" fill="#64748b">LogoIpsum</text></svg>
         <svg width="110" height="30" viewBox="0 0 110 30" fill="none"><polygon points="11,3 20,24 2,24" fill="#94a3b8"/><text x="27" y="21" font-size="13" font-family="Manrope,sans-serif" font-weight="700" fill="#64748b">LogoIpsum</text></svg>
@@ -77,16 +64,12 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════════
-       CATALOG
-  ═══════════════════════════════════════════ -->
   <section id="catalog" class="max-w-6xl mx-auto px-5 pb-20">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
       <div>
-        <h2 class="text-2xl font-bold mb-1">Property Catalog</h2>
-        <p class="text-gray-500 text-sm">A wide selection of commercial real estate for your business</p>
+        <h2 class="text-2xl font-bold mb-1">Programs Catalog</h2>
+        <p class="text-gray-500 text-sm">A wide selection of academic and professional programs</p>
       </div>
-      <!-- Carousel nav -->
       <div class="flex gap-2" aria-label="Catalog controls">
         <button class="carousel-btn" type="button" onclick="scrollCatalog(-1)" aria-label="Scroll catalog left" aria-controls="catalog-track">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
@@ -98,56 +81,45 @@
     </div>
 
     <div id="catalog-track" class="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-1 px-1" style="scrollbar-width:none;">
-      <!-- Card 1 -->
       <div class="min-w-65 snap-start shrink-0">
-        <img src="https://picsum.photos/seed/office1/400/300" alt="Office space" class="card-img mb-4" />
-        <h3 class="font-semibold text-sm mb-0.5">Office Spaces</h3>
-        <p class="text-xs text-gray-400">1,000+ properties</p>
+        <img src="https://picsum.photos/seed/office1/400/300" alt="Undergraduate students" class="card-img mb-4" />
+        <h3 class="font-semibold text-sm mb-0.5">Undergraduate Programs</h3>
+        <p class="text-xs text-gray-400">Foundational and degree pathways</p>
       </div>
-      <!-- Card 2 -->
       <div class="min-w-65 snap-start shrink-0">
-        <img src="https://picsum.photos/seed/warehouse2/400/300" alt="Warehouse" class="card-img mb-4" />
-        <h3 class="font-semibold text-sm mb-0.5">Warehouse Spaces</h3>
-        <p class="text-xs text-gray-400">500+ properties</p>
+        <img src="https://picsum.photos/seed/warehouse2/400/300" alt="Professional training class" class="card-img mb-4" />
+        <h3 class="font-semibold text-sm mb-0.5">Professional Courses</h3>
+        <p class="text-xs text-gray-400">Career-focused short programs</p>
       </div>
-      <!-- Card 3 -->
       <div class="min-w-65 snap-start shrink-0">
-        <img src="https://picsum.photos/seed/land3/400/300" alt="Land plot" class="card-img mb-4" />
-        <h3 class="font-semibold text-sm mb-0.5">Land Plots</h3>
-        <p class="text-xs text-gray-400">3,000+ properties</p>
+        <img src="https://picsum.photos/seed/land3/400/300" alt="Certification workshop" class="card-img mb-4" />
+        <h3 class="font-semibold text-sm mb-0.5">Skill Certifications</h3>
+        <p class="text-xs text-gray-400">Industry-recognized credentials</p>
       </div>
-      <!-- Card 4 -->
       <div class="min-w-65 snap-start shrink-0">
-        <img src="https://picsum.photos/seed/retail4/400/300" alt="Retail space" class="card-img mb-4" />
-        <h3 class="font-semibold text-sm mb-0.5">Retail Spaces</h3>
-        <p class="text-xs text-gray-400">800+ properties</p>
+        <img src="https://picsum.photos/seed/retail4/400/300" alt="Online learning session" class="card-img mb-4" />
+        <h3 class="font-semibold text-sm mb-0.5">Online Learning Tracks</h3>
+        <p class="text-xs text-gray-400">Flexible remote study options</p>
       </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════════
-       HOW WE WORK
-  ═══════════════════════════════════════════ -->
   <section id="how" class="max-w-6xl mx-auto px-5 pb-20">
     <div class="flex flex-col md:flex-row gap-10 items-start">
-
-      <!-- Left: image + CTA badge -->
       <div class="md:w-2/5 relative">
         <img src="https://picsum.photos/seed/building5/600/700" alt="Building"
              class="w-full rounded-2xl object-cover" style="aspect-ratio:4/5;" />
-        <!-- Badge -->
         <div class="absolute bottom-6 left-6 bg-brand text-white rounded-full w-32 h-32 flex flex-col items-center justify-center text-center shadow-lg">
           <span class="font-bold text-sm leading-tight">Free</span>
-          <span class="font-bold text-sm leading-tight">Consultation</span>
+          <span class="font-bold text-sm leading-tight">Advising</span>
         </div>
       </div>
 
-      <!-- Right: steps -->
       <div class="md:w-3/5">
         <h2 class="text-2xl font-bold mb-2">How We Work</h2>
         <p class="text-gray-500 text-sm mb-8 leading-relaxed">
-          We've made the process of working with us as simple and transparent as possible.
+          We have designed a clear learning journey so each student can progress with confidence.
         </p>
 
         <div class="flex flex-col gap-6">
@@ -157,8 +129,8 @@
               <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
             </div>
             <div>
-              <h4 class="font-semibold text-sm mb-1">Consultation & Needs Analysis</h4>
-              <p class="text-xs text-gray-500 leading-relaxed">At this stage, we determine which type of property you need for your business.</p>
+              <h4 class="font-semibold text-sm mb-1">Advising and Goal Mapping</h4>
+              <p class="text-xs text-gray-500 leading-relaxed">We understand your goals and suggest the right learning path.</p>
             </div>
           </div>
 
@@ -167,8 +139,8 @@
               <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
             </div>
             <div>
-              <h4 class="font-semibold text-sm mb-1">Search & Selection of Properties</h4>
-              <p class="text-xs text-gray-500 leading-relaxed">We offer only verified properties that match your budget and goals.</p>
+              <h4 class="font-semibold text-sm mb-1">Program Selection</h4>
+              <p class="text-xs text-gray-500 leading-relaxed">Choose from curated programs that match your interests and career plans.</p>
             </div>
           </div>
 
@@ -177,8 +149,8 @@
               <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
             <div>
-              <h4 class="font-semibold text-sm mb-1">Property Viewing & Evaluation</h4>
-              <p class="text-xs text-gray-500 leading-relaxed">We organise viewings of properties and provide full information on each.</p>
+              <h4 class="font-semibold text-sm mb-1">Guided Learning and Mentorship</h4>
+              <p class="text-xs text-gray-500 leading-relaxed">Attend interactive sessions with continuous feedback and mentor support.</p>
             </div>
           </div>
 
@@ -187,8 +159,8 @@
               <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             </div>
             <div>
-              <h4 class="font-semibold text-sm mb-1">Verification & Document Preparation</h4>
-              <p class="text-xs text-gray-500 leading-relaxed">We conduct a thorough check of all documents and ownership rights.</p>
+              <h4 class="font-semibold text-sm mb-1">Assessment and Certification</h4>
+              <p class="text-xs text-gray-500 leading-relaxed">We evaluate progress and issue recognized certifications on completion.</p>
             </div>
           </div>
 
@@ -197,8 +169,8 @@
               <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
             <div>
-              <h4 class="font-semibold text-sm mb-1">Transaction Support</h4>
-              <p class="text-xs text-gray-500 leading-relaxed">We provide support through signing the contract and accompany you at every stage.</p>
+              <h4 class="font-semibold text-sm mb-1">Career and Academic Progression</h4>
+              <p class="text-xs text-gray-500 leading-relaxed">Our team supports your next steps toward employment and higher studies.</p>
             </div>
           </div>
 
@@ -208,32 +180,29 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════════
-       REVIEWS
-  ═══════════════════════════════════════════ -->
   <section id="reviews" class="max-w-6xl mx-auto px-5 pb-20" aria-labelledby="reviews-title">
     <div class="flex items-end justify-between gap-4 mb-8">
       <div>
-        <h2 id="reviews-title" class="text-2xl font-bold mb-1">Client Reviews</h2>
-        <p class="text-gray-500 text-sm">What businesses say after working with us</p>
+        <h2 id="reviews-title" class="text-2xl font-bold mb-1">Student Testimonials</h2>
+        <p class="text-gray-500 text-sm">What learners say about their journey with us</p>
       </div>
     </div>
 
     <div class="grid md:grid-cols-3 gap-5">
       <article class="border border-gray-100 rounded-2xl p-6 bg-white">
-        <h3 class="font-semibold text-sm mb-2">Office Relocation Project</h3>
-        <p class="text-sm text-gray-500 leading-relaxed mb-4">The team shortlisted only relevant options and handled negotiations quickly. We moved in two weeks earlier than planned.</p>
-        <p class="text-xs font-medium text-gray-700">COO, Northline Tech</p>
+        <h3 class="font-semibold text-sm mb-2">Data Analytics Diploma</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">The curriculum was practical and well-structured. I built real projects and secured an internship before graduation.</p>
+        <p class="text-xs font-medium text-gray-700">Student, School of Computing</p>
       </article>
       <article class="border border-gray-100 rounded-2xl p-6 bg-white">
-        <h3 class="font-semibold text-sm mb-2">Warehouse Expansion</h3>
-        <p class="text-sm text-gray-500 leading-relaxed mb-4">Strong market knowledge and clear legal support from viewing to contract signing. Zero surprises in the final deal.</p>
-        <p class="text-xs font-medium text-gray-700">Operations Lead, FastRoute Logistics</p>
+        <h3 class="font-semibold text-sm mb-2">Business Management Program</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">Lecturers connected theory with real industry cases. The mentorship helped me move into a leadership role.</p>
+        <p class="text-xs font-medium text-gray-700">Alumni, Business School</p>
       </article>
       <article class="border border-gray-100 rounded-2xl p-6 bg-white">
-        <h3 class="font-semibold text-sm mb-2">Retail Launch</h3>
-        <p class="text-sm text-gray-500 leading-relaxed mb-4">They found a high-traffic location that matched our budget and timeline. Communication was fast and practical throughout.</p>
-        <p class="text-xs font-medium text-gray-700">Founder, Avenue Goods</p>
+        <h3 class="font-semibold text-sm mb-2">Career Switch to IT</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">I joined with no tech background. The step-by-step support gave me confidence to start a new career path.</p>
+        <p class="text-xs font-medium text-gray-700">Professional Learner</p>
       </article>
     </div>
   </section>
