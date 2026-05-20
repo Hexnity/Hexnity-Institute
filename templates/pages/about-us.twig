@@ -1,0 +1,68 @@
+{% extends "index" %}
+
+{% block title %}About Us — Prostranstvo{% endblock %}
+
+{% block content %}
+  <section class="max-w-6xl mx-auto px-5 pt-10 pb-12">
+    <div class="relative rounded-2xl overflow-hidden bg-gray-800 min-h-90 md:min-h-105 flex items-end">
+      <img src="https://picsum.photos/seed/aboutcover/1200/560" alt="Team meeting in office"
+           class="absolute inset-0 w-full h-full object-cover opacity-55" />
+      <div class="relative z-10 p-8 md:p-12 max-w-2xl">
+        <h1 class="hero-text text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+          About Our Agency
+        </h1>
+        <p class="text-gray-100 text-sm md:text-base leading-relaxed">
+          We help companies find commercial spaces that match their goals, timelines, and growth plans.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-5 pb-16">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-10 items-start">
+      <div class="md:col-span-4">
+        <h2 class="text-2xl font-bold mb-3">Who We Are</h2>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Prostranstvo is a commercial real estate team focused on office, retail, warehouse, and mixed-use properties.
+          We combine market analytics with practical deal support from search to signing.
+        </p>
+      </div>
+
+      <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-4 border border-gray-100 rounded-2xl overflow-hidden">
+        <div class="p-6 flex flex-col gap-1">
+          <span class="text-3xl font-extrabold text-dark">10+</span>
+          <span class="text-xs text-gray-400 leading-snug">Years on the market</span>
+        </div>
+        <div class="p-6 flex flex-col gap-1 border-l border-gray-100">
+          <span class="text-3xl font-extrabold text-dark">1000+</span>
+          <span class="text-xs text-gray-400 leading-snug">Completed deals</span>
+        </div>
+        <div class="p-6 flex flex-col gap-1 border-t border-gray-100 sm:border-t-0 sm:border-l">
+          <span class="text-3xl font-extrabold text-dark">4000+</span>
+          <span class="text-xs text-gray-400 leading-snug">Properties in database</span>
+        </div>
+        <div class="p-6 flex flex-col gap-1 border-t border-l border-gray-100 sm:border-t-0">
+          <span class="text-3xl font-extrabold text-dark">95%</span>
+          <span class="text-xs text-gray-400 leading-snug">Client satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-5 pb-20">
+    <div class="grid md:grid-cols-3 gap-5">
+      <article class="border border-gray-100 rounded-2xl p-6 bg-white">
+        <h3 class="font-semibold text-sm mb-2">Market Expertise</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">We monitor market dynamics and provide practical recommendations for each business case.</p>
+      </article>
+      <article class="border border-gray-100 rounded-2xl p-6 bg-white">
+        <h3 class="font-semibold text-sm mb-2">Legal Accuracy</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Our process includes document checks and transparent transaction support.</p>
+      </article>
+      <article class="border border-gray-100 rounded-2xl p-6 bg-white">
+        <h3 class="font-semibold text-sm mb-2">Long-Term Partnership</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">We build relationships that support expansion, relocation, and portfolio optimization.</p>
+      </article>
+    </div>
+  </section>
+{% endblock %}

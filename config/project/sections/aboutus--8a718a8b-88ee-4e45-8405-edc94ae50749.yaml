@@ -1,0 +1,22 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: e2a917f5-fff6-411f-87cb-4194f48d7b72 # About Us
+handle: aboutus
+maxAuthors: 1
+minAuthors: 1
+name: 'About Us'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  2fd3e442-d9e4-4b75-8016-c044511e562e: # Nishan Shashintha
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/about-us.twig
+    uriFormat: about-us
+type: single

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Prostranstvo — Commercial Real Estate{% endblock %}</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Manrope', 'sans-serif'] },
+          colors: {
+            brand: '#2563EB',
+            dark: '#0F1117',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Manrope', sans-serif; }
+    .skip-link { position: absolute; left: -9999px; top: 1rem; z-index: 60; }
+    .skip-link:focus { left: 1rem; background: #111827; color: #fff; padding: .75rem 1rem; border-radius: .5rem; }
+    .hero-img { object-fit: cover; border-radius: 1rem; }
+    .stat-divider { border-left: 1px solid #e5e7eb; }
+    .nav-link { transition: color .2s; }
+    .nav-link:hover { color: #2563EB; }
+    .card-img { aspect-ratio: 4/3; object-fit: cover; border-radius: .75rem; width: 100%; }
+    .step-icon { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .logo-row img { filter: grayscale(1); opacity: .55; transition: opacity .2s; }
+    .logo-row img:hover { opacity: 1; filter: none; }
+    .carousel-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #d1d5db; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background .2s, border-color .2s; }
+    .carousel-btn:hover { background: #2563EB; border-color: #2563EB; color: #fff; }
+    .carousel-btn:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; }
+    @media (max-width: 640px) {
+      .hero-text { font-size: 2.25rem; }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  {% include '_partials/header' %}
+
+  <main id="main-content">
+    {% block content %}{% endblock %}
+
+
+  </main>
+
+  {% include '_partials/footer' %}
+
+
+  <script>
+    function scrollCatalog(dir) {
+      const track = document.getElementById('catalog-track');
+      track.scrollBy({ left: dir * 280, behavior: 'smooth' });
+    }
+
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('.mobile-nav-link') : [];
+
+    function closeMobileMenu() {
+      if (!menuButton || !mobileMenu) {
+        return;
+      }
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation menu');
+      mobileMenu.classList.add('hidden');
+    }
+
+    function openMobileMenu() {
+      if (!menuButton || !mobileMenu) {
+        return;
+      }
+      menuButton.setAttribute('aria-expanded', 'true');
+      menuButton.setAttribute('aria-label', 'Close navigation menu');
+      mobileMenu.classList.remove('hidden');
+    }
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', function () {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          closeMobileMenu();
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 768) {
+          closeMobileMenu();
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

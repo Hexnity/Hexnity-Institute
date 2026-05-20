@@ -1,0 +1,65 @@
+{% extends "index" %}
+
+{% block title %}How We Work — Prostranstvo{% endblock %}
+
+{% block content %}
+  <section class="max-w-6xl mx-auto px-5 pt-10 pb-12">
+    <div class="relative rounded-2xl overflow-hidden bg-gray-900 min-h-90 md:min-h-105 flex items-end">
+      <img src="https://picsum.photos/seed/processcover/1200/560" alt="Commercial property interior"
+           class="absolute inset-0 w-full h-full object-cover opacity-50" />
+      <div class="relative z-10 p-8 md:p-12 max-w-2xl">
+        <h1 class="hero-text text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+          How We Work
+        </h1>
+        <p class="text-gray-100 text-sm md:text-base leading-relaxed">
+          A clear process that keeps every stage predictable, efficient, and aligned with your goals.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-5 pb-20">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-10 items-start">
+      <div class="md:col-span-4">
+        <h2 class="text-2xl font-bold mb-3">Our Process</h2>
+        <p class="text-sm text-gray-500 leading-relaxed mb-6">
+          From discovery to closing, we manage the full cycle with transparent communication and clear milestones.
+        </p>
+      </div>
+
+      <div class="md:col-span-8 flex flex-col gap-5">
+        <article class="border border-gray-100 rounded-2xl p-6 bg-white flex gap-4 items-start">
+          <div class="step-icon bg-blue-50 text-brand">1</div>
+          <div>
+            <h3 class="font-semibold text-sm mb-1">Discovery and Brief</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We gather business requirements, budget, timing, and non-negotiable criteria.</p>
+          </div>
+        </article>
+
+        <article class="border border-gray-100 rounded-2xl p-6 bg-white flex gap-4 items-start">
+          <div class="step-icon bg-blue-50 text-brand">2</div>
+          <div>
+            <h3 class="font-semibold text-sm mb-1">Search and Shortlist</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We present vetted property options with clear pros, risks, and estimated deal terms.</p>
+          </div>
+        </article>
+
+        <article class="border border-gray-100 rounded-2xl p-6 bg-white flex gap-4 items-start">
+          <div class="step-icon bg-blue-50 text-brand">3</div>
+          <div>
+            <h3 class="font-semibold text-sm mb-1">Viewings and Negotiation</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We coordinate visits, evaluate fit, and lead negotiations with owners and stakeholders.</p>
+          </div>
+        </article>
+
+        <article class="border border-gray-100 rounded-2xl p-6 bg-white flex gap-4 items-start">
+          <div class="step-icon bg-blue-50 text-brand">4</div>
+          <div>
+            <h3 class="font-semibold text-sm mb-1">Legal and Closing</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We verify documentation, support approvals, and guide the transaction to completion.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+{% endblock %}

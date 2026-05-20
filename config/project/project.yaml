@@ -1,0 +1,31 @@
+dateModified: 1779294036
+email:
+  fromEmail: shashinthalk.cc@outlook.com
+  fromName: 'Nishan Shashintha'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    2fd3e442-d9e4-4b75-8016-c044511e562e: 'Nishan Shashintha' # Nishan Shashintha
+    8a718a8b-88ee-4e45-8405-edc94ae50749: 'About Us' # About Us
+    13e79737-19a4-4a59-8310-51ce0d51935a: Home # Home
+    618360c5-dac2-4d32-8e1d-ecd8c0fcad71: 'Nishan Shashintha' # Nishan Shashintha
+    d2081994-c680-47ad-82e4-c39372f07748: Home # Home
+    e2a917f5-fff6-411f-87cb-4194f48d7b72: 'About Us' # About Us
+plugins:
+  hommxmlsitemap:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.1
+system:
+  edition: solo
+  live: true
+  name: 'Nishan Shashintha'
+  schemaVersion: 5.10.0.0
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

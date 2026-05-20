@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en
+name: 'Nishan Shashintha'
+primary: true
+siteGroup: 618360c5-dac2-4d32-8e1d-ecd8c0fcad71 # Nishan Shashintha
+sortOrder: 1
