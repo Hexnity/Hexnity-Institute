@@ -1,9 +1,9 @@
 version: '3.8'
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # This URL will be: ghcr.io/your-github-username/your-repo-name:latest
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER_LOWERSCASE}/${REPO_NAME}:latest
+    user: "82:82"
     environment:
       - CRAFT_ENVIRONMENT=production
       - CRAFT_DB_DRIVER=pgsql
@@ -15,17 +15,11 @@ services:
       - CRAFT_DB_SCHEMA=public
       - CRAFT_SECURITY_KEY=${CRAFT_SECURITY_KEY}
       - CRAFT_APP_ID=${CRAFT_APP_ID}
-      # FrankenPHP Specifics
       - SERVER_NAME=:80
       - CADDY_GLOBAL_OPTIONS=local_certs
     volumes:
       - craft-storage:/app/storage
       - craft-cpresources:/app/web/cpresources
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
     depends_on:
       db:
         condition: service_healthy
