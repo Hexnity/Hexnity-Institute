@@ -1,15 +1,21 @@
-# --- Stage 1: Build Assets (Vite/Tailwind) ---
+# --- Stage 1: Build Assets (Tailwind v4) ---
 FROM node:20-alpine AS builder
 WORKDIR /app
+
+# Copy package files first to leverage Docker cache
 COPY package*.json ./
 RUN npm install
+
+# Copy everything else and build
 COPY . .
 RUN npm run build
 
 # --- Stage 2: Production Server ---
 FROM dunglas/frankenphp:1-php8.4-alpine
 
-# Install System dependencies for Craft & Imagick
+# Install System dependencies (Required as root)
+USER root
+
 RUN apk add --no-cache \
     libpng-dev \
     libjpeg-turbo-dev \
@@ -19,6 +25,7 @@ RUN apk add --no-cache \
     libpq-dev \
     imagemagick-dev \
     ghostscript \
+    bash \
     $PHPIZE_DEPS
 
 # Install PHP Extensions
@@ -39,10 +46,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Set Production Environment
 ENV NODE_ENV=production
-ENV PHP_INI_SCAN_DIR=:/usr/local/etc/php/conf.d
 WORKDIR /app
 
-# Copy Composer files first for layer caching
+# Copy Composer files first
 COPY composer.json composer.lock ./
 RUN composer install --no-interaction --no-dev --optimize-autoloader
 
@@ -52,9 +58,9 @@ COPY --from=builder /app/web/dist ./web/dist
 # Copy application code
 COPY . .
 
-# Set permissions for Craft
-RUN mkdir -p storage cpresources \
+# Set permissions for Craft CMS
+RUN mkdir -p storage cpresources web/assets \
     && chown -R www-data:www-data storage cpresources web/assets
 
-# Use FrankenPHP's default entrypoint
+# Use FrankenPHP's user for security
 USER www-data
