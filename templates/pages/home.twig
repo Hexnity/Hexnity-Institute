@@ -6,10 +6,8 @@
 {% set sectionFive = entry.sectionFive %}
 {% block content %}
   <section class="max-w-6xl mx-auto px-5 pt-10 pb-16 js-anim-hero">
-    <div class="relative rounded-2xl overflow-hidden bg-gray-800 min-h-105 md:min-h-120 flex items-end js-anim-fade-up">
-      <img src="{{ sectionOne.homePageCoverImage.one().url }}" alt="{{ sectionOne.homePageCoverImage.one().title }}"
-           class="absolute inset-0 w-full h-full object-cover opacity-80" />
-      <div class="relative z-10 p-8 md:p-14 max-w-xl js-anim-stagger">
+    <div style="background-color: {{ sectionOne.backgroundColor ?? '#1F2937' }};" class="relative rounded-2xl overflow-hidden min-h-105 md:min-h-120 flex flex-col md:flex-row items-end js-anim-fade-up">
+      <div class="relative z-10 p-8 md:p-14 max-w-xl w-full order-2 md:order-1 js-anim-stagger">
         <h1 class="hero-text text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4 js-anim-stagger-item">
           {{ sectionOne.sectionTitle }}
         </h1>
@@ -20,53 +18,53 @@
           {{ sectionOne.sectionCtaButtonText }}
         </a>
       </div>
+      <div class="w-full order-1 md:order-2">
+        <img src="{{ sectionOne.homePageCoverImage.one().url }}" alt="{{ sectionOne.homePageCoverImage.one().title }}"
+           class="w-full h-64 md:h-full object-cover opacity-80" />
+      </div>
     </div>
   </section>
-
 
   <section id="about" class="max-w-6xl mx-auto px-5 pb-16 js-anim-reveal">
     <div class="flex flex-col md:flex-row gap-10 items-start">
       <div class="md:w-1/3">
-        <h2 class="text-2xl font-bold mb-3">{{ sectionTwo.sectionTitle }}</h2>
+        <h2 class="text-2xl font-bold mb-3">{{ sectionTwo.sectionTitle }} </h2>
         <p class="text-gray-500 text-sm leading-relaxed">
           {{ sectionTwo.sectionDescription }}
         </p>
       </div>
 
       <div class="md:w-2/3 grid grid-cols-2 sm:grid-cols-4 gap-0 border border-gray-100 rounded-2xl overflow-hidden">
-        <div class="p-6 flex flex-col gap-1">
-          <span class="text-3xl font-extrabold text-dark">10+</span>
-          <span class="text-xs text-gray-400 leading-snug">Years in education</span>
-        </div>
-        <div class="p-6 flex flex-col gap-1 border-l border-gray-100">
-          <span class="text-3xl font-extrabold text-dark">1000+</span>
-          <span class="text-xs text-gray-400 leading-snug">Graduated students</span>
-        </div>
-        <div class="p-6 flex flex-col gap-1 border-t border-gray-100 sm:border-t-0 sm:border-l">
-          <span class="text-3xl font-extrabold text-dark">4000+</span>
-          <span class="text-xs text-gray-400 leading-snug">Learning hours delivered</span>
-        </div>
-        <div class="p-6 flex flex-col gap-1 border-t border-l border-gray-100 sm:border-t-0">
-          <span class="text-3xl font-extrabold text-dark">95%</span>
-          <span class="text-xs text-gray-400 leading-snug">Student satisfaction</span>
-        </div>
+        
+        {% set analyticsEntries = entry.sectionTwo.analytics.all() %}
+
+        {% for item in analyticsEntries %}
+            <div class="p-6 flex flex-col gap-1">
+              <span class="text-3xl font-extrabold text-dark">{{ item.prefix }} {{ item.number }} {{ item.suffix }}</span>
+              <span class="text-xs text-gray-400 leading-snug">{{ item.title }}</span>
+            </div>
+        {% endfor %}
+
       </div>
     </div>
   </section>
-
 
   <section class="border-y border-gray-100 py-8 mb-16 js-anim-reveal">
     <div class="max-w-6xl mx-auto px-5">
       <div class="logo-row flex flex-wrap items-center justify-center gap-8 md:gap-14">
-        <svg width="110" height="30" viewBox="0 0 110 30" fill="none"><rect x="0" y="8" width="22" height="14" rx="3" fill="#94a3b8"/><text x="28" y="21" font-size="13" font-family="Manrope,sans-serif" font-weight="700" fill="#64748b">LogoIpsum</text></svg>
-        <svg width="110" height="30" viewBox="0 0 110 30" fill="none"><circle cx="11" cy="15" r="10" fill="#94a3b8"/><text x="27" y="21" font-size="13" font-family="Manrope,sans-serif" font-weight="700" fill="#64748b">LogoIpsum</text></svg>
-        <svg width="110" height="30" viewBox="0 0 110 30" fill="none"><polygon points="11,3 20,24 2,24" fill="#94a3b8"/><text x="27" y="21" font-size="13" font-family="Manrope,sans-serif" font-weight="700" fill="#64748b">LogoIpsum</text></svg>
-        <svg width="110" height="30" viewBox="0 0 110 30" fill="none"><rect x="1" y="5" width="20" height="20" rx="10" fill="#94a3b8"/><text x="27" y="21" font-size="13" font-family="Manrope,sans-serif" font-weight="700" fill="#64748b">LogoIpsum</text></svg>
-        <svg width="110" height="30" viewBox="0 0 110 30" fill="none"><path d="M11 3 L21 15 L11 27 L1 15Z" fill="#94a3b8"/><text x="27" y="21" font-size="13" font-family="Manrope,sans-serif" font-weight="700" fill="#64748b">LogoIpsum</text></svg>
+        {% for partner in sectionThree.partners.all() %}
+          {% set image = partner.logoImage.one() %}
+          {% if image %}
+            <div class="h-10 flex items-center cursor-pointer justify-center transition-all duration-300">
+              <a href="{{ partner.partnerUrl }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ image.url }}" alt="{{ partner.title }} logo" class="h-10 object-contain" loading="lazy" decoding="async" />
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
   </section>
-
 
   <section id="catalog" class="max-w-6xl mx-auto px-5 pb-20 js-anim-reveal">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
