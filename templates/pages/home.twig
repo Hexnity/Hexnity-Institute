@@ -1,19 +1,23 @@
 {% extends "index" %}
-{% set image = entry.homePageCoverImage.one() %}
+{% set sectionOne = entry.sectionOne %}
+{% set sectionTwo = entry.sectionTwo %}
+{% set sectionThree = entry.sectionThree %}
+{% set sectionFour = entry.sectionFour %}
+{% set sectionFive = entry.sectionFive %}
 {% block content %}
   <section class="max-w-6xl mx-auto px-5 pt-10 pb-16 js-anim-hero">
     <div class="relative rounded-2xl overflow-hidden bg-gray-800 min-h-105 md:min-h-120 flex items-end js-anim-fade-up">
-      <img src="{{ image.url }}" alt="{{ image.title }}"
+      <img src="{{ sectionOne.homePageCoverImage.one().url }}" alt="{{ sectionOne.homePageCoverImage.one().title }}"
            class="absolute inset-0 w-full h-full object-cover opacity-80" />
       <div class="relative z-10 p-8 md:p-14 max-w-xl js-anim-stagger">
         <h1 class="hero-text text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4 js-anim-stagger-item">
-          Build Your Future<br/>with Confidence
+          {{ sectionOne.sectionTitle }}
         </h1>
         <p class="text-gray-200 text-sm md:text-base mb-7 leading-relaxed js-anim-stagger-item">
-          Career-focused education programs for students and professionals,<br/>from foundation to advanced levels.
+          {{ sectionOne.sectionDescription }}
         </p>
-        <a href="#contact" class="inline-block bg-white text-gray-900 font-semibold text-sm px-6 py-3 rounded-lg hover:bg-gray-100 transition js-anim-stagger-item">
-          Start Learning
+        <a href="{{ sectionOne.sectionCtaButtonUrl }}" class="inline-block bg-white text-gray-900 font-semibold text-sm px-6 py-3 rounded-lg hover:bg-gray-100 transition js-anim-stagger-item">
+          {{ sectionOne.sectionCtaButtonText }}
         </a>
       </div>
     </div>
@@ -23,9 +27,9 @@
   <section id="about" class="max-w-6xl mx-auto px-5 pb-16 js-anim-reveal">
     <div class="flex flex-col md:flex-row gap-10 items-start">
       <div class="md:w-1/3">
-        <h2 class="text-2xl font-bold mb-3">About Us</h2>
+        <h2 class="text-2xl font-bold mb-3">{{ sectionTwo.sectionTitle }}</h2>
         <p class="text-gray-500 text-sm leading-relaxed">
-          Hexnity Institute empowers learners with practical, industry-aligned education. We support students through structured teaching, mentorship, and skill development.
+          {{ sectionTwo.sectionDescription }}
         </p>
       </div>
 

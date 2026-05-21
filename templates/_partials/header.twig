@@ -2,6 +2,7 @@
 {% set brandLogo = siteConfigs and siteConfigs.siteLogo is defined ? siteConfigs.siteLogo.one() : null %}
 {% set brandName = siteConfigs and siteConfigs.siteName is defined and siteConfigs.siteName ? siteConfigs.siteName : 'Hexnity Institute' %}
 {% set brandTagline = siteConfigs and siteConfigs.siteTagline is defined and siteConfigs.siteTagline ? siteConfigs.siteTagline : 'Education and Career Growth' %}
+{% set navEntries = craft.entries.section('navigation').all() %}
 
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100" role="banner">
   <div class="max-w-6xl mx-auto px-5 flex items-center justify-between h-16">
@@ -25,11 +26,11 @@
     </a>
 
     <nav class="hidden md:flex items-center gap-7 text-sm text-gray-600 font-medium" aria-label="Primary navigation">
-      <a href="#about" class="nav-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded">About Us</a>
-      <a href="#catalog" class="nav-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded">Programs</a>
-      <a href="#how" class="nav-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded">How We Work</a>
-      <a href="#reviews" class="nav-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded">Testimonials</a>
-      <a href="#contact" class="nav-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded">Contact</a>
+      
+      {% for item in navEntries %}
+        {% set isActive = craft.app.request.pathInfo == item.menuPathOrUrl|trim('/') %}
+        <a href="{{ item.menuPathOrUrl }}" class="nav-link {{ isActive ? 'text-brand' : '' }} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded">{{ item.title }}</a>
+      {% endfor %}
     </nav>
 
     <button
@@ -49,11 +50,10 @@
 
   <nav id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white" aria-label="Mobile navigation">
     <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-2 text-sm text-gray-700 font-medium">
-      <a href="#about" class="mobile-nav-link px-1 py-2 rounded hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">About Us</a>
-      <a href="#catalog" class="mobile-nav-link px-1 py-2 rounded hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">Programs</a>
-      <a href="#how" class="mobile-nav-link px-1 py-2 rounded hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">How We Work</a>
-      <a href="#reviews" class="mobile-nav-link px-1 py-2 rounded hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">Testimonials</a>
-      <a href="#contact" class="mobile-nav-link px-1 py-2 rounded hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">Contact</a>
+      {% for item in navEntries %}
+        {% set isActive = craft.app.request.pathInfo == item.menuPathOrUrl|trim('/') %}
+        <a href="{{ item.menuPathOrUrl }}" class="mobile-nav-link px-1 py-2 rounded hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 {{ isActive ? 'text-brand' : '' }}">{{ item.title }}</a>
+      {% endfor %}
     </div>
   </nav>
 </header>
