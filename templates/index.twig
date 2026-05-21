@@ -1,9 +1,88 @@
+{% set siteConfigs = craft.app.globals.getSetByHandle('siteConfigs') %}
+{% set siteLogoAsset = siteConfigs and siteConfigs.siteLogo is defined ? siteConfigs.siteLogo.one() : null %}
+{% set siteIconAsset = siteConfigs and siteConfigs.siteIcon is defined ? siteConfigs.siteIcon.one() : null %}
+
+{% set seoSiteName = siteConfigs and siteConfigs.siteName is defined and siteConfigs.siteName ? siteConfigs.siteName : null %}
+{% set seoTagline = siteConfigs and siteConfigs.siteTagline is defined and siteConfigs.siteTagline ? siteConfigs.siteTagline : null %}
+{% set seoLogo = siteLogoAsset ? siteLogoAsset.url : null %}
+{% set seoIcon = siteIconAsset ? siteIconAsset.url : null %}
+{% set seoLogoAbsolute = seoLogo starts with 'http' ? seoLogo : craft.app.request.hostInfo ~ seoLogo %}
+{% set seoIconAbsolute = seoIcon starts with 'http' ? seoIcon : craft.app.request.hostInfo ~ seoIcon %}
+
+{% set seoTitleRaw %}{% block title %}{{ seoSiteName }}{% endblock %}{% endset %}
+{% set seoTitle = seoTitleRaw|striptags|trim %}
+{% if seoTitle == seoSiteName %}
+  {% set seoFullTitle = seoSiteName %}
+{% else %}
+  {% set seoFullTitle = seoTitle ~ ' | ' ~ seoSiteName %}
+{% endif %}
+
+{% set seoDescriptionRaw %}{% block metaDescription %}{{ seoTagline }}{% endblock %}{% endset %}
+{% set seoDescription = seoDescriptionRaw|striptags|replace({'\n': ' ', '\r': ' ', '\t': ' '})|trim %}
+{% set seoKeywordsRaw %}{% block metaKeywords %}education, institute, courses, training, career growth{% endblock %}{% endset %}
+{% set seoKeywords = seoKeywordsRaw|striptags|trim %}
+{% set seoCanonical = craft.app.request.absoluteUrl ?? '/' %}
+{% set seoLocale = 'en_US' %}
+{% set seoTwitterHandle = '@hexnity' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% block title %}Hexnity Institute{% endblock %}</title>
+  <title>{{ seoFullTitle }}</title>
+  <meta name="description" content="{{ seoDescription }}" />
+  <meta name="keywords" content="{{ seoKeywords }}" />
+  <meta name="author" content="{{ seoSiteName }}" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <link rel="canonical" href="{{ seoCanonical }}" />
+  <link rel="alternate" hreflang="en" href="{{ seoCanonical }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ seoCanonical }}" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ seoSiteName }}" />
+  <meta property="og:title" content="{{ seoFullTitle }}" />
+  <meta property="og:description" content="{{ seoDescription }}" />
+  <meta property="og:url" content="{{ seoCanonical }}" />
+  <meta property="og:locale" content="{{ seoLocale }}" />
+  <meta property="og:image" content="{{ seoLogoAbsolute }}" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="{{ seoTwitterHandle }}" />
+  <meta name="twitter:title" content="{{ seoFullTitle }}" />
+  <meta name="twitter:description" content="{{ seoDescription }}" />
+  <meta name="twitter:image" content="{{ seoLogoAbsolute }}" />
+
+  <link rel="icon" href="{{ seoIconAbsolute }}" sizes="any" />
+  <link rel="apple-touch-icon" href="{{ seoIconAbsolute }}" />
+  <meta name="theme-color" content="#0F1117" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "{{ seoSiteName|e('js') }}",
+      "description": "{{ seoTagline|e('js') }}",
+      "url": "{{ seoCanonical|e('js') }}",
+      "logo": "{{ seoLogoAbsolute|e('js') }}"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ seoSiteName|e('js') }}",
+      "url": "{{ seoCanonical|e('js') }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ seoCanonical|e('js') }}search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
   <link rel="stylesheet" href="/css/app.css">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script>
@@ -110,6 +189,8 @@
       });
     }
   </script>
+
+  {% block pageScripts %}{% endblock %}
 
 </body>
 </html>

@@ -1,18 +1,27 @@
+{% set siteConfigs = craft.app.globals.getSetByHandle('siteConfigs') %}
+{% set brandLogo = siteConfigs and siteConfigs.siteLogo is defined ? siteConfigs.siteLogo.one() : null %}
+{% set brandName = siteConfigs and siteConfigs.siteName is defined and siteConfigs.siteName ? siteConfigs.siteName : 'Hexnity Institute' %}
+{% set brandTagline = siteConfigs and siteConfigs.siteTagline is defined and siteConfigs.siteTagline ? siteConfigs.siteTagline : 'Education and Career Growth' %}
+
 <footer id="contact" class="border-t border-gray-100 bg-gray-50" role="contentinfo">
   <div class="max-w-6xl mx-auto px-5 py-12 flex flex-col md:flex-row justify-between gap-8">
     <div class="md:w-1/3">
       <div class="flex items-center gap-2.5 mb-4">
-        <div class="w-8 h-8 bg-brand rounded flex items-center justify-center" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <rect x="1" y="1" width="6" height="6" fill="white"/>
-            <rect x="11" y="1" width="6" height="6" fill="white"/>
-            <rect x="1" y="11" width="6" height="6" fill="white"/>
-            <rect x="11" y="11" width="6" height="6" fill="white" opacity=".4"/>
-          </svg>
-        </div>
+        {% if brandLogo %}
+          <img src="{{ brandLogo.url }}" alt="{{ brandName }} logo" class="w-8 h-8 rounded object-cover" loading="lazy" decoding="async" />
+        {% else %}
+          <div class="w-8 h-8 bg-brand rounded flex items-center justify-center" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect x="1" y="1" width="6" height="6" fill="white"/>
+              <rect x="11" y="1" width="6" height="6" fill="white"/>
+              <rect x="1" y="11" width="6" height="6" fill="white"/>
+              <rect x="11" y="11" width="6" height="6" fill="white" opacity=".4"/>
+            </svg>
+          </div>
+        {% endif %}
         <div>
-          <div class="font-bold text-sm leading-tight">Hexnity Institute</div>
-          <div class="text-[10px] text-gray-400 leading-tight uppercase tracking-widest">Education and Career Growth</div>
+          <div class="font-bold text-sm leading-tight">{{ brandName }}</div>
+          <div class="text-[10px] text-gray-400 leading-tight uppercase tracking-widest">{{ brandTagline }}</div>
         </div>
       </div>
       <p class="text-xs text-gray-400 leading-relaxed">A modern institute helping learners build practical skills for higher education and career success.</p>
@@ -48,6 +57,6 @@
   </div>
 
   <div class="border-t border-gray-100 py-4 text-center text-xs text-gray-400">
-    &copy; 2026 Hexnity Institute. All rights reserved.
+    &copy; {{ now|date('Y') }} {{ brandName }}. All rights reserved.
   </div>
 </footer>
