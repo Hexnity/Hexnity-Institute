@@ -3,7 +3,7 @@
   "prefer-stable": true,
   "require": {
     "craftcms/cms": "^5.10.2",
-    "homm/hommxmlsitemap": "^2.0.0",
+    "ether/seo": "^5.0.0",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

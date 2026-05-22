@@ -1,8 +1,8 @@
 allowLineBreaksInTitles: false
-color: null
+color: blue
 description: null
 fieldLayouts:
-  07197875-60eb-4b8c-91d0-4b6f82963dd7:
+  2642af9d-4c81-437d-90a7-3936b9b164cf:
     cardThumbAlignment: end
     tabs:
       -
@@ -13,7 +13,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2026-05-20T15:45:34+00:00'
+            dateAdded: '2026-05-21T19:44:50+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -32,103 +32,71 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 01217f67-55b5-48f2-b6ae-e41c3254a3d5
+            uid: c055d010-6a03-42e5-896a-988dfb42449d
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2026-05-21T15:18:09+00:00'
+            dateAdded: '2026-05-21T19:49:02+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: a56243a4-4276-43e5-b6a5-05a2fd3aaebd # Section One
+            fieldUid: cba3437b-2e10-4cbd-bde8-ab8a0c21f73f # Number
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 31cfecf1-ec90-450e-9216-a8afdbce9d31
+            uid: d3432475-0770-45ed-ac5f-3a86baff346e
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2026-05-21T15:29:37+00:00'
+            dateAdded: '2026-05-21T19:49:02+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 256fe857-efe9-47d4-857b-57a848541433 # Section Two
+            fieldUid: 66411c8b-ebf7-4298-ad81-4bac931c68ff # Prefix
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: aaa97b24-8e08-4b8f-a08e-90247e1afd99
+            uid: c3d7c35f-0e3d-444c-ab8f-91479842ffe4
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2026-05-21T15:32:16+00:00'
+            dateAdded: '2026-05-21T19:49:02+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: dce8d1bd-9d1f-4fa9-a020-87743b278658 # Section Three
+            fieldUid: d59da266-bc93-451f-9153-9e23af6be0ee # Suffix
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5c49c451-c317-47db-bf63-387344190dab
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2026-05-21T15:32:16+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 4dca7a68-57fe-4204-b264-e6ee62d2b015 # Section Four
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 606b7bea-5a5c-4bcc-8905-2bcf542182cd
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2026-05-21T15:32:16+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 4526a9d8-04ef-4d6e-9151-0706aea0e73e # Section Five
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 501b0220-8668-477f-bead-61c39a1f2ae9
+            uid: 483955fb-e4b6-486a-b038-30fc8b07523f
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 2f91d80a-a6b3-4448-9b8d-28539e2597aa
+        uid: 9b04520d-9fed-41a3-ab53-c34a51a3b21e
         userCondition: null
     thumbFieldKey: null
-handle: home
+handle: homePageAnalytics
 hasTitleField: true
-icon: null
-name: Home
+icon: chart-mixed
+name: 'Home Page Analytics'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: Home
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
 uiLabelFormat: '{title}'

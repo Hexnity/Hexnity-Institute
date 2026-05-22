@@ -1,0 +1,22 @@
+columnSuffix: null
+handle: backgroundColor
+instructions: null
+name: 'Background Color'
+searchable: false
+settings:
+  allowCustomColors: true
+  palette:
+    -
+      __assoc__:
+        -
+          - color
+          - '#009688'
+        -
+          - label
+          - primary
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

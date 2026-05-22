@@ -1,0 +1,37 @@
+columnSuffix: null
+handle: homePageCoverImage
+instructions: null
+name: 'Home Page Cover Image'
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  branchLimit: null
+  defaultPlacement: end
+  defaultUploadLocationSource: 'volume:8e4f54b1-7c53-4dfb-8e38-82025bbd8103' # Images
+  defaultUploadLocationSubpath: home
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: 1
+  previewMode: full
+  restrictFiles: true
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:8e4f54b1-7c53-4dfb-8e38-82025bbd8103' # Images
+  restrictedLocationSubpath: null
+  selectionLabel: 'Add Home Page Cover Image'
+  showSearchInput: true
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources:
+    - 'volume:8e4f54b1-7c53-4dfb-8e38-82025bbd8103' # Images
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: thumbs
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets

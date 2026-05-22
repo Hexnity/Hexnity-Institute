@@ -1,0 +1,50 @@
+columnSuffix: null
+handle: sectionThree
+instructions: null
+name: 'Section Three'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - e1ad56fb-1667-4691-95d4-d2b49c4ccf6e
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    1:
+                      - uid
+                      - 48c6ed20-298e-4df7-9a6e-573dc9be8b83
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T20:26:15+00:00'
+                            9:
+                              - uid
+                              - e91ad8d4-427b-49d8-b3ed-5e58548b1fef
+                            12:
+                              - fieldUid
+                              - e0a0a7b2-7d7c-4805-a075-db480b55fb7e # Partners 
+            4:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

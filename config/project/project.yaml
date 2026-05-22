@@ -1,25 +1,115 @@
-dateModified: 1779294036
+dateModified: 1779478657
 email:
   fromEmail: shashinthalk.cc@outlook.com
   fromName: 'Nishan Shashintha'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  uploads:
+    hasUrls: true
+    name: Uploads
+    settings:
+      path: $ASSET_BASE_PATH
+    type: craft\fs\Local
+    url: $ASSET_BASE_URL
 meta:
   __names__:
     2fd3e442-d9e4-4b75-8016-c044511e562e: 'Nishan Shashintha' # Nishan Shashintha
+    2ffda8da-d388-41ae-9bb4-b8c4687de93e: 'Section One Description ' # Section One Description 
+    4dca7a68-57fe-4204-b264-e6ee62d2b015: 'Section Four' # Section Four
+    5a834cc4-3e6c-46b0-8f57-54d10d9546bd: 'Site Logo' # Site Logo
+    5c2fc3d0-307f-4e48-9e7a-5a2b5ea02ff9: SectionOneDescription # SectionOneDescription
+    5e2fd106-b4ab-42a1-82aa-735470544a44: 'Partner Url' # Partner Url
+    5e9af5e5-6172-40ec-bc82-c97be9670e4a: 'Home Page Analytics' # Home Page Analytics
+    06d3705e-997e-4c4d-aba1-059ba6374f11: 'Public Schema' # Public Schema
+    6dc64a1c-29c8-4c1d-9ce0-571e3e24aa28: 'Partner Logos' # Partner Logos
     8a718a8b-88ee-4e45-8405-edc94ae50749: 'About Us' # About Us
+    8dde8f91-ef5c-46cc-a3f6-23471d317ea3: 'Section Description' # Section Description
+    8e4f54b1-7c53-4dfb-8e38-82025bbd8103: Images # Images
+    8f72654c-9df7-441d-a0d5-6f73281c0040: 'Partner Entity' # Partner Entity
+    8fa2a91c-67a2-45ad-ab80-2b096992134b: 'Nav Bar Menu' # Nav Bar Menu
     13e79737-19a4-4a59-8310-51ce0d51935a: Home # Home
+    73a0b3bd-8707-471d-a439-5859dc200be5: 'Menu Path or URL' # Menu Path or URL
+    256fe857-efe9-47d4-857b-57a848541433: 'Section Two' # Section Two
+    503d2fc2-5fe7-4ef6-9848-ea6227801b52: 'Site Tagline' # Site Tagline
+    761bf852-601a-4452-92a4-143b36ca610a: 'Section CTA Button Text' # Section CTA Button Text
+    4526a9d8-04ef-4d6e-9151-0706aea0e73e: 'Section Five' # Section Five
+    66411c8b-ebf7-4298-ad81-4bac931c68ff: Prefix # Prefix
     618360c5-dac2-4d32-8e1d-ecd8c0fcad71: 'Nishan Shashintha' # Nishan Shashintha
+    3400201f-6e9c-4d42-844a-1ca85351f069: 'Background Color' # Background Color
+    5503142b-de3a-4ae4-9734-36490f74b81d: 'Analytics ' # Analytics 
+    45435238-f8de-4638-82c4-1e4ce861acea: 'Home Page Cover Image' # Home Page Cover Image
+    a96e43a1-4ffe-414a-87ad-501b93bcdadb: 'Site Configs' # Site Configs
+    a279ac04-4093-44f2-a3ad-fe171904a77c: Navigation # Navigation
+    a56243a4-4276-43e5-b6a5-05a2fd3aaebd: 'Section One' # Section One
+    afc2c347-55e9-4905-97cb-b59ddc51d3e4: 'Site Name' # Site Name
+    aff5434f-f4d0-4e8e-a69e-a9a3e20d4974: 'Logo Image' # Logo Image
+    ba80a0d1-0812-4cc3-a25f-df59e0335af2: SectionOneDescription # SectionOneDescription
+    bbba4118-3d4a-4826-8d77-29247bb34169: 'Menu Text' # Menu Text
+    c0b3266a-dcec-4e65-aeea-43da8caa8191: 'Section Title' # Section Title
+    cba3437b-2e10-4cbd-bde8-ab8a0c21f73f: Number # Number
+    cebbc08b-59c5-44c7-8ef8-f9417a4437b3: 'Section One Title' # Section One Title
+    d59da266-bc93-451f-9153-9e23af6be0ee: Suffix # Suffix
+    d60f6d7c-2169-402c-b2bd-a55f53cb921b: 'Site Icon' # Site Icon
     d2081994-c680-47ad-82e4-c39372f07748: Home # Home
+    da7a1d27-23b2-4931-a816-1a43e2609876: 'Section CTA Button URL' # Section CTA Button URL
+    dce8d1bd-9d1f-4fa9-a020-87743b278658: 'Section Three' # Section Three
+    e0a0a7b2-7d7c-4805-a075-db480b55fb7e: 'Partners ' # Partners 
+    e063d64e-4be8-4d71-bb80-a6ced0503664: 'Institute Analytics' # Institute Analytics
     e2a917f5-fff6-411f-87cb-4194f48d7b72: 'About Us' # About Us
 plugins:
-  hommxmlsitemap:
+  cloudflare:
     edition: standard
     enabled: true
-    schemaVersion: 0.0.1
+    schemaVersion: 1.0.1
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.2.0
+    settings:
+      description: ''
+      facebookAppId: ''
+      metaTemplate: ''
+      removeAlternateUrls: ''
+      robots:
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+      robotsTxt: "{# Sitemap URL #}\r\nSitemap: {{ url(seo.sitemapName ~ '.xml') }}\r\n\r\n{# Disallows #}\r\n{% if craft.app.config.env != 'production' %}\r\n\r\n{# Disallow access to everything when NOT in production #}\r\nUser-agent: *\r\nDisallow: /\r\n\r\n{% else %}\r\n\r\n{# Disallow access to cpresources/ when live #}\r\nUser-agent: *\r\nDisallow: /cpresources/\r\n\r\n{% endif %}"
+      sitemapLimit: '1000'
+      sitemapName: sitemap
+      socialImage: ''
+      title:
+        -
+          __assoc__:
+            -
+              - key
+              - '1'
+            -
+              - locked
+              - '0'
+            -
+              - template
+              - '{title}'
+        -
+          __assoc__:
+            -
+              - key
+              - '2'
+            -
+              - locked
+              - '1'
+            -
+              - template
+              - ' - {{ siteName }}'
+      twitterHandle: ''
 system:
   edition: solo
   live: true
-  name: 'Nishan Shashintha'
+  name: 'Hexnity Institute'
+  retryDuration: null
   schemaVersion: 5.10.0.0
   timeZone: America/Los_Angeles
 users:

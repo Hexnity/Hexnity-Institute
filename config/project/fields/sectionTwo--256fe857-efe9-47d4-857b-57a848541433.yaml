@@ -1,0 +1,93 @@
+columnSuffix: null
+handle: sectionTwo
+instructions: null
+name: 'Section Two'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - a7bba7be-0be5-49a7-8bd7-aafc3354a2e4
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 50e2a93d-4b34-4f82-917c-3d0e330d0e84
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T15:29:32+00:00'
+                            9:
+                              - uid
+                              - c5864f16-6b55-4010-9bdc-ac5fb0dc2fcc
+                            12:
+                              - fieldUid
+                              - c0b3266a-dcec-4e65-aeea-43da8caa8191 # Section Title
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T15:35:19+00:00'
+                            9:
+                              - uid
+                              - 19b645ab-1cc3-4e0a-8520-a1b681d15cbe
+                            12:
+                              - fieldUid
+                              - 8dde8f91-ef5c-46cc-a3f6-23471d317ea3 # Section Description
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T19:53:20+00:00'
+                            9:
+                              - uid
+                              - bca3f0a7-0bf0-4b68-859a-2c6b4ba9ab94
+                            12:
+                              - fieldUid
+                              - 5503142b-de3a-4ae4-9734-36490f74b81d # Analytics 
+            4:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

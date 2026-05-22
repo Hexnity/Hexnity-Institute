@@ -1,0 +1,78 @@
+fieldLayouts:
+  317b174b-65b5-4fb4-a609-b0ec1ad82f72:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-21T10:08:59+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5a834cc4-3e6c-46b0-8f57-54d10d9546bd # Site Logo
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 12627516-1843-4879-ad4f-ba64f9d34a03
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-21T10:08:59+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: afc2c347-55e9-4905-97cb-b59ddc51d3e4 # Site Name
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bdea936b-cac6-4ac0-bdf0-c92fb9c57ecb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-21T10:08:59+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 503d2fc2-5fe7-4ef6-9848-ea6227801b52 # Site Tagline
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a4300330-fb0b-40a0-991a-24d0f072de45
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-21T10:08:59+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d60f6d7c-2169-402c-b2bd-a55f53cb921b # Site Icon
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5b85f2d5-5889-4e05-9a0a-e5dbfd351b55
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Site Identifications'
+        uid: d9e9fcc8-86c1-410f-8fde-7e25ce8123b1
+        userCondition: null
+    thumbFieldKey: null
+handle: siteConfigs
+name: 'Site Configs'
+sortOrder: 1

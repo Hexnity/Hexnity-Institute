@@ -1,0 +1,25 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 8f72654c-9df7-441d-a0d5-6f73281c0040 # Partner Entity
+handle: partnerLogos
+maxAuthors: 1
+minAuthors: 1
+name: 'Partner Logos'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: ''
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  2fd3e442-d9e4-4b75-8016-c044511e562e: # Nishan Shashintha
+    enabledByDefault: false
+    hasUrls: true
+    template: partner-logos/_entry.twig
+    uriFormat: 'partner-logos/{slug}'
+structure:
+  maxLevels: null
+  uid: b95eada3-31e0-496b-ad92-4ad31b3d9b3a
+type: structure

@@ -69,8 +69,8 @@
   <section id="catalog" class="max-w-6xl mx-auto px-5 pb-20 js-anim-reveal">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
       <div>
-        <h2 class="text-2xl font-bold mb-1">Programs Catalog</h2>
-        <p class="text-gray-500 text-sm">A wide selection of academic and professional programs</p>
+        <h2 class="text-2xl font-bold mb-1">{{ sectionFour.sectionTitle }}</h2>
+        <p class="text-gray-500 text-sm">{{ sectionFour.sectionDescription }}</p>
       </div>
       <div class="flex gap-2" aria-label="Catalog controls">
         <button class="carousel-btn" type="button" onclick="scrollCatalog(-1)" aria-label="Scroll catalog left" aria-controls="catalog-track">
@@ -81,28 +81,20 @@
         </button>
       </div>
     </div>
-
+    
     <div id="catalog-track" class="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-1 px-1" style="scrollbar-width:none;">
-      <div class="min-w-65 snap-start shrink-0">
-        <img src="https://picsum.photos/seed/office1/400/300" alt="Undergraduate students" class="card-img mb-4" />
-        <h3 class="font-semibold text-sm mb-0.5">Undergraduate Programs</h3>
-        <p class="text-xs text-gray-400">Foundational and degree pathways</p>
-      </div>
-      <div class="min-w-65 snap-start shrink-0">
-        <img src="https://picsum.photos/seed/warehouse2/400/300" alt="Professional training class" class="card-img mb-4" />
-        <h3 class="font-semibold text-sm mb-0.5">Professional Courses</h3>
-        <p class="text-xs text-gray-400">Career-focused short programs</p>
-      </div>
-      <div class="min-w-65 snap-start shrink-0">
-        <img src="https://picsum.photos/seed/land3/400/300" alt="Certification workshop" class="card-img mb-4" />
-        <h3 class="font-semibold text-sm mb-0.5">Skill Certifications</h3>
-        <p class="text-xs text-gray-400">Industry-recognized credentials</p>
-      </div>
-      <div class="min-w-65 snap-start shrink-0">
-        <img src="https://picsum.photos/seed/retail4/400/300" alt="Online learning session" class="card-img mb-4" />
-        <h3 class="font-semibold text-sm mb-0.5">Online Learning Tracks</h3>
-        <p class="text-xs text-gray-400">Flexible remote study options</p>
-      </div>
+      {% for courses in sectionFour.coursesOrProgramms.all() %}
+        {% set courseImage = courses.image.one() ?? null %}
+        <div class="min-w-65 snap-start shrink-0">
+          <img 
+            src="{{ courseImage ? courseImage.url : 'https://via.placeholder.com/400x300?text=No+Image' }}" 
+            alt="{{ courses.title }}" 
+            class="card-img mb-4 object-cover" 
+          />
+          <h3 class="font-semibold text-sm mb-0.5">{{ courses.title }}</h3>
+          <p class="text-xs text-gray-400">{{ courses.description ?? 'Explore our pathways' }}</p>
+        </div>
+      {% endfor %}
     </div>
   </section>
 

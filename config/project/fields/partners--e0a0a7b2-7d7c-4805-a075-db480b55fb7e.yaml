@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: partners
+instructions: null
+name: 'Partners '
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:6dc64a1c-29c8-4c1d-9ce0-571e3e24aa28' # Partner Logos
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: cards-grid
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries
