@@ -2,8 +2,8 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "craftcms/cms": "^5.9.0",
-    "homm/hommxmlsitemap": "^2.0.0",
+    "craftcms/cms": "^5.10.2",
+    "ether/seo": "^5.0.0",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

@@ -1,0 +1,10 @@
+columnSuffix: null
+handle: sectionFive
+instructions: null
+name: 'Section Five'
+searchable: false
+settings:
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

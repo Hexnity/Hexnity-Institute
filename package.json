@@ -1,10 +1,16 @@
 {
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.0",
+    "esbuild": "^0.28.0",
     "tailwindcss": "^4.3.0"
   },
   "scripts": {
     "dev": "tailwindcss -i ./src/input.css -o ./web/dist/main.css --watch",
-    "build": "tailwindcss -i ./web/css/app.css -o ./web/dist/main.css --minify"
+    "build": "tailwindcss -i ./web/css/app.css -o ./web/dist/main.css --minify",
+    "dev:js": "esbuild ./src/js/home-animations.js --bundle --format=iife --sourcemap --target=es2018 --outfile=./web/dist/home-animations.js --watch",
+    "build:js": "esbuild ./src/js/home-animations.js --bundle --minify --format=iife --target=es2018 --outfile=./web/dist/home-animations.js"
+  },
+  "dependencies": {
+    "motion": "^12.39.0"
   }
 }

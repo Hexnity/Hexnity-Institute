@@ -1,9 +1,10 @@
 version: '3.8'
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER_LOWERSCASE}/${REPO_NAME}:latest
+    # Using user 82:82 (www-data in Alpine/FrankenPHP) ensures the container 
+    # has permission to write to the volumes we are mounting.
+    user: "82:82"
     environment:
       - CRAFT_ENVIRONMENT=production
       - CRAFT_DB_DRIVER=pgsql
@@ -15,17 +16,16 @@ services:
       - CRAFT_DB_SCHEMA=public
       - CRAFT_SECURITY_KEY=${CRAFT_SECURITY_KEY}
       - CRAFT_APP_ID=${CRAFT_APP_ID}
-      # FrankenPHP Specifics
       - SERVER_NAME=:80
       - CADDY_GLOBAL_OPTIONS=local_certs
+      # Ensure these are also in your Coolify Environment Variables
+      - ASSET_BASE_URL=${ASSET_BASE_URL:-https://edu.hexnity.com/uploads}
+      - ASSET_BASE_PATH=/app/web/uploads
     volumes:
       - craft-storage:/app/storage
       - craft-cpresources:/app/web/cpresources
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
+      # Added this line to fix your persistent uploads
+      - craft-uploads:/app/web/uploads
     depends_on:
       db:
         condition: service_healthy
@@ -48,3 +48,5 @@ volumes:
   craft-storage:
   craft-cpresources:
   craft-db-data:
+  # Added this to the persistent volume list
+  craft-uploads:

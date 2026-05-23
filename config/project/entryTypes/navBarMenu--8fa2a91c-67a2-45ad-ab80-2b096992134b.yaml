@@ -1,0 +1,70 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  30c149e0-785d-41e0-af97-4f4a8bdf27ed:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-05-21T13:09:20+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: ed9a7ba0-0d6f-4359-bb3c-06611b9357ce
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-21T13:06:46+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 73a0b3bd-8707-471d-a439-5859dc200be5 # Menu Path or URL
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f91b80ea-d843-4133-bf87-536828e99912
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9595fb7b-a45f-4bbf-be57-0d5a93e70081
+        userCondition: null
+    thumbFieldKey: null
+handle: navBarMenu
+hasTitleField: true
+icon: align-justify
+name: 'Nav Bar Menu'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

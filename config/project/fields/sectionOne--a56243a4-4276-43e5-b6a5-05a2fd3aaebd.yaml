@@ -1,0 +1,153 @@
+columnSuffix: null
+handle: sectionOne
+instructions: null
+name: 'Section One'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 476a3cbf-1764-48f9-9a6e-81bf065a496e
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 46f15366-f5c5-42fd-98f3-cc7a8ebc59ea
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T15:17:42+00:00'
+                            9:
+                              - uid
+                              - af8079ff-fa9e-4403-bfce-f17e17ef1fcb
+                            12:
+                              - fieldUid
+                              - 45435238-f8de-4638-82c4-1e4ce861acea # Home Page Cover Image
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T15:17:42+00:00'
+                            9:
+                              - uid
+                              - 1f2f17a4-ff3d-4eb4-9a93-c6d8897858ec
+                            12:
+                              - fieldUid
+                              - c0b3266a-dcec-4e65-aeea-43da8caa8191 # Section Title
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T15:17:42+00:00'
+                            9:
+                              - uid
+                              - 5155ee37-08d2-4aa0-afa3-fd92c7557cb8
+                            12:
+                              - fieldUid
+                              - 8dde8f91-ef5c-46cc-a3f6-23471d317ea3 # Section Description
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T15:17:42+00:00'
+                            9:
+                              - uid
+                              - 984b6d37-21e6-4a23-af51-379fb004f180
+                            12:
+                              - fieldUid
+                              - 761bf852-601a-4452-92a4-143b36ca610a # Section CTA Button Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T15:17:42+00:00'
+                            9:
+                              - uid
+                              - e32c853e-cb9f-4ed7-b5b2-b8ef22761588
+                            12:
+                              - fieldUid
+                              - da7a1d27-23b2-4931-a816-1a43e2609876 # Section CTA Button URL
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T19:05:09+00:00'
+                            9:
+                              - uid
+                              - 9d96c20c-5166-4e11-b3b9-9b62f5ce4135
+                            12:
+                              - fieldUid
+                              - 3400201f-6e9c-4d42-844a-1ca85351f069 # Background Color
+            4:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

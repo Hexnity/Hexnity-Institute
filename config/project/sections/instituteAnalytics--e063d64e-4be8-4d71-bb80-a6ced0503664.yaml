@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    handle: analyticsElement
+    name: 'Analytics Element'
+    uid: 5e9af5e5-6172-40ec-bc82-c97be9670e4a # Home Page Analytics
+handle: instituteAnalytics
+maxAuthors: 1
+minAuthors: 1
+name: 'Institute Analytics'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  2fd3e442-d9e4-4b75-8016-c044511e562e: # Nishan Shashintha
+    enabledByDefault: true
+    hasUrls: true
+    template: home-page-analytics/_entry.twig
+    uriFormat: 'home-page-analytics/{slug}'
+structure:
+  maxLevels: null
+  uid: f177216f-bdfc-4922-8ced-67400ab70758
+type: structure

@@ -1,0 +1,50 @@
+columnSuffix: null
+handle: sectiononedescription
+instructions: null
+name: SectionOneDescription
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 39c3eb48-8cfe-4804-a68a-b2fb42e77d44
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    1:
+                      - uid
+                      - 3c294075-2f80-40f9-a156-e79f81c3451b
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 100
+                            8:
+                              - dateAdded
+                              - '2026-05-21T15:14:13+00:00'
+                            9:
+                              - uid
+                              - 75966bd9-232f-4070-8d5c-3a4d0a6ce54a
+                            12:
+                              - fieldUid
+                              - ba80a0d1-0812-4cc3-a25f-df59e0335af2 # SectionOneDescription
+            4:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

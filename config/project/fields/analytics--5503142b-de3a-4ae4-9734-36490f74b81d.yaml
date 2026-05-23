@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: analytics
+instructions: null
+name: 'Analytics '
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: 4
+  minRelations: 3
+  selectionLabel: 'Add Analytics Element'
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:e063d64e-4be8-4d71-bb80-a6ced0503664' # Institute Analytics
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries
