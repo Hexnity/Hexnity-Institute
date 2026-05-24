@@ -1,4 +1,5 @@
 {% set siteConfigs = craft.app.globals.getSetByHandle('siteConfigs') %}
+{% set footer = craft.app.globals.getSetByHandle('footer') %}
 {% set brandLogo = siteConfigs and siteConfigs.siteLogo is defined ? siteConfigs.siteLogo.one() : null %}
 {% set brandName = siteConfigs and siteConfigs.siteName is defined and siteConfigs.siteName ? siteConfigs.siteName : 'Hexnity Institute' %}
 {% set brandTagline = siteConfigs and siteConfigs.siteTagline is defined and siteConfigs.siteTagline ? siteConfigs.siteTagline : 'Education and Career Growth' %}
@@ -24,39 +25,41 @@
           <div class="text-[10px] text-gray-400 leading-tight uppercase tracking-widest">{{ brandTagline }}</div>
         </div>
       </div>
-      <p class="text-xs text-gray-400 leading-relaxed">A modern institute helping learners build practical skills for higher education and career success.</p>
+      <p class="text-xs text-gray-400 leading-relaxed">
+        {{ footer.footerDescription }}
+      </p>
     </div>
 
     <div class="flex gap-12 text-sm" aria-label="Footer links">
       <div>
-        <h2 class="font-semibold mb-3 text-sm">Company</h2>
+        <h2 class="font-semibold mb-3 text-sm">{{ footer.navigationTitle }}</h2>
         <ul class="flex flex-col gap-2 text-gray-500 text-xs">
-          <li><a href="#about" class="hover:text-brand transition">About Us</a></li>
-          <li><a href="#how" class="hover:text-brand transition">How We Work</a></li>
-          <li><a href="#reviews" class="hover:text-brand transition">Reviews</a></li>
+          {% for link in footer.menus.all() %}
+            <li><a href="{{ link.menuPathOrUrl }}" class="hover:text-brand transition">{{ link.title }}</a></li>
+          {% endfor %}
         </ul>
       </div>
       <div>
-        <h2 class="font-semibold mb-3 text-sm">Programs</h2>
+        <h2 class="font-semibold mb-3 text-sm">{{ footer.navigationTitle2 }}</h2>
         <ul class="flex flex-col gap-2 text-gray-500 text-xs">
-          <li><a href="#catalog" class="hover:text-brand transition">Undergraduate Pathways</a></li>
-          <li><a href="#catalog" class="hover:text-brand transition">Professional Courses</a></li>
-          <li><a href="#catalog" class="hover:text-brand transition">Skill Certifications</a></li>
+          {% for link2 in footer.menus2.all() %}
+            <li><a href="{{ link2.menuPathOrUrl }}" class="hover:text-brand transition">{{ link2.title }}</a></li>
+          {% endfor %}
         </ul>
       </div>
     </div>
 
     <address class="text-sm not-italic">
-      <h2 class="font-semibold mb-3 text-sm">Contact</h2>
+      <h2 class="font-semibold mb-3 text-sm">{{ footer.navigationTitle3 }}</h2>
       <ul class="flex flex-col gap-2 text-gray-500 text-xs">
-        <li><a href="tel:+18001234567" class="hover:text-brand transition">+94 (11) 234-5678</a></li>
-        <li><a href="mailto:info@hexnityinstitute.com" class="hover:text-brand transition">info@hexnityinstitute.com</a></li>
-        <li>45 Learning Avenue, Colombo</li>
+        {% for link3 in footer.menus3.all() %}
+          <li><a href="{{ link3.menuPathOrUrl }}" class="hover:text-brand transition">{{ link3.title }}</a></li>
+        {% endfor %}
       </ul>
     </address>
   </div>
 
   <div class="border-t border-gray-100 py-4 text-center text-xs text-gray-400">
-    &copy; {{ now|date('Y') }} {{ brandName }}. All rights reserved.
+    &copy; {{ now|date('Y') }} {{ footer.copyrightText }}.
   </div>
 </footer>
